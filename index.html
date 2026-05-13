@@ -16,15 +16,14 @@
 –purple-200: #d4c5ee;
 –purple-400: #a07cc5;
 –purple-600: #6d4fa0;
-–purple-800: #3e2a6e;
 –sand: #fafaf8;
 –sand-border: #eae6e0;
 –text-main: #1e1e2e;
-–text-muted: #666;
-–text-light: #aaa;
+–text-muted: #555;
+–text-light: #999;
 –radius: 12px;
-–radius-sm: 8px;
 –radius-pill: 100px;
+–max-w: 760px;
 }
 
 html { scroll-behavior: smooth; }
@@ -37,283 +36,156 @@ min-height: 100vh;
 line-height: 1.6;
 }
 
-/* ── NAV ── */
 nav {
-position: sticky;
-top: 0;
-z-index: 100;
-background: rgba(250,250,248,0.92);
-backdrop-filter: blur(8px);
+position: sticky; top: 0; z-index: 100;
+background: rgba(250,250,248,0.94);
+backdrop-filter: blur(10px);
 border-bottom: 0.5px solid var(–sand-border);
-display: flex;
-justify-content: center;
-gap: 4px;
-padding: 0 16px;
+display: flex; justify-content: center;
+padding: 0 24px;
 }
 nav a {
-display: block;
-padding: 14px 16px;
-font-size: 12.5px;
-color: var(–text-muted);
-text-decoration: none;
-letter-spacing: 0.5px;
+display: block; padding: 13px 18px;
+font-size: 12px; color: var(–text-light);
+text-decoration: none; letter-spacing: 0.8px;
 border-bottom: 2px solid transparent;
 transition: color 0.2s, border-color 0.2s;
+white-space: nowrap;
 }
 nav a:hover { color: var(–purple-600); }
-nav a.active { color: var(–purple-600); border-bottom-color: var(–purple-600); font-weight: 500; }
+nav a.active { color: var(–purple-600); border-bottom-color: var(–purple-600); }
 
-/* ── HERO ── */
+.hero-wrap { background: #fff; border-bottom: 0.5px solid var(–sand-border); }
 .hero {
-background: #fff;
-border-bottom: 0.5px solid var(–sand-border);
-padding: 48px 32px 36px;
-display: flex;
-gap: 32px;
-align-items: flex-start;
-max-width: 860px;
-margin: 0 auto;
+max-width: var(–max-w); margin: 0 auto;
+padding: 48px 32px 40px;
+display: flex; gap: 36px; align-items: center;
 }
 
 .avatar {
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: var(–purple-100);
-border: 3px solid var(–purple-200);
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: ‘Noto Serif TC’, serif;
-font-size: 32px;
-color: var(–purple-600);
-flex-shrink: 0;
-overflow: hidden;
+width: 96px; height: 96px; border-radius: 50%;
+background: var(–purple-100); border: 2.5px solid var(–purple-200);
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Noto Serif TC’, serif; font-size: 30px;
+color: var(–purple-600); flex-shrink: 0; overflow: hidden;
 }
-.avatar img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-border-radius: 50%;
-}
-
-.hero-info { flex: 1; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
 .name-zh {
 font-family: ‘Noto Serif TC’, serif;
-font-size: 30px;
-font-weight: 500;
-letter-spacing: 4px;
-color: var(–text-main);
-margin-bottom: 2px;
+font-size: 28px; font-weight: 500; letter-spacing: 5px;
+color: var(–text-main); margin-bottom: 3px;
 }
-.name-en {
-font-size: 12px;
-letter-spacing: 4px;
-color: var(–text-light);
-margin-bottom: 12px;
-}
-
+.name-en { font-size: 11px; letter-spacing: 4px; color: var(–text-light); margin-bottom: 14px; }
 .dept-tag {
-display: inline-block;
-font-size: 12px;
-background: var(–purple-50);
-color: var(–purple-600);
+display: inline-block; font-size: 11.5px;
+background: var(–purple-50); color: var(–purple-600);
 border: 0.5px solid var(–purple-200);
-padding: 4px 14px;
-border-radius: var(–radius-pill);
-margin-bottom: 16px;
+padding: 4px 14px; border-radius: var(–radius-pill); margin-bottom: 18px;
 }
-
 .contact-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
-display: flex;
-align-items: center;
-gap: 6px;
-font-size: 12px;
-color: var(–text-muted);
-background: var(–sand);
-border: 0.5px solid var(–sand-border);
-padding: 5px 12px;
-border-radius: var(–radius-pill);
+display: flex; align-items: center; gap: 6px;
+font-size: 11.5px; color: var(–text-muted);
+background: var(–sand); border: 0.5px solid var(–sand-border);
+padding: 5px 13px; border-radius: var(–radius-pill);
 }
-.chip svg { width: 13px; height: 13px; stroke: var(–text-light); fill: none; flex-shrink: 0; }
+.chip svg { width: 12px; height: 12px; stroke: var(–text-light); fill: none; flex-shrink: 0; }
 
-/* ── MAIN LAYOUT ── */
-.container {
-max-width: 860px;
-margin: 0 auto;
-padding: 36px 32px;
-}
-
-.section { margin-bottom: 36px; }
+.container { max-width: var(–max-w); margin: 0 auto; padding: 40px 32px 56px; }
+.section { margin-bottom: 44px; }
 
 .sec-title {
-display: flex;
-align-items: center;
-gap: 8px;
-font-size: 11px;
-font-weight: 500;
-letter-spacing: 2px;
-color: var(–purple-600);
-text-transform: uppercase;
-margin-bottom: 18px;
+display: flex; align-items: center; gap: 8px;
+font-size: 10.5px; font-weight: 500; letter-spacing: 2.5px;
+color: var(–purple-400); text-transform: uppercase; margin-bottom: 20px;
 }
-.sec-title::after {
-content: ‘’;
-flex: 1;
-height: 0.5px;
-background: var(–purple-200);
-}
-.sec-title svg { width: 15px; height: 15px; stroke: var(–purple-400); fill: none; flex-shrink: 0; }
+.sec-title::after { content: ‘’; flex: 1; height: 0.5px; background: var(–sand-border); }
+.sec-title svg { width: 14px; height: 14px; stroke: var(–purple-400); fill: none; flex-shrink: 0; }
 
-/* About */
-.about-text {
-font-size: 14.5px;
-color: #444;
-line-height: 1.85;
-max-width: 640px;
-}
-.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-.tag {
-font-size: 11.5px;
-background: var(–purple-50);
-color: var(–purple-600);
-border: 0.5px solid var(–purple-200);
-padding: 4px 12px;
-border-radius: var(–radius-pill);
-}
+.about-text { font-size: 14.5px; color: var(–text-muted); line-height: 1.9; max-width: 620px; }
 
-/* Education */
-.timeline { display: flex; flex-direction: column; gap: 0; }
-.tl-item { display: flex; gap: 16px; padding-bottom: 20px; position: relative; }
+.timeline { display: flex; flex-direction: column; }
+.tl-item { display: flex; gap: 20px; padding-bottom: 22px; position: relative; align-items: flex-start; }
 .tl-item:not(:last-child)::before {
-content: ‘’;
-position: absolute;
-left: 5px;
-top: 12px;
-bottom: 0;
-width: 0.5px;
-background: var(–purple-200);
+content: ‘’; position: absolute; left: 4px; top: 14px; bottom: 0;
+width: 0.5px; background: var(–sand-border);
 }
 .tl-dot {
-width: 11px; height: 11px;
-border-radius: 50%;
-background: var(–purple-200);
-border: 2px solid #fff;
-outline: 1.5px solid var(–purple-300, #c4aee8);
-flex-shrink: 0;
-margin-top: 3px;
+width: 9px; height: 9px; border-radius: 50%;
+background: var(–sand-border); flex-shrink: 0; margin-top: 4px;
 }
-.tl-dot.current { background: var(–purple-600); outline-color: var(–purple-400); }
-.tl-year { font-size: 11px; color: var(–text-light); min-width: 100px; padding-top: 2px; }
+.tl-dot.current { background: var(–purple-600); }
+.tl-year { font-size: 11px; color: var(–text-light); white-space: nowrap; min-width: 110px; padding-top: 2px; }
 .tl-school { font-size: 14px; font-weight: 500; color: var(–text-main); }
-.tl-dept { font-size: 12px; color: var(–text-muted); margin-top: 2px; }
+.tl-dept { font-size: 12px; color: var(–text-light); margin-top: 2px; }
 
-/* Awards */
 .award-list { display: flex; flex-direction: column; gap: 10px; }
-.award-item { display: flex; align-items: flex-start; gap: 12px; }
+.award-item {
+display: flex; align-items: center; gap: 14px;
+padding: 13px 18px; background: #fff;
+border: 0.5px solid var(–sand-border); border-radius: var(–radius);
+}
 .award-badge {
-font-size: 10.5px;
-white-space: nowrap;
-padding: 3px 10px;
-border-radius: var(–radius-pill);
-flex-shrink: 0;
-margin-top: 2px;
+font-size: 10px; white-space: nowrap;
+padding: 3px 10px; border-radius: var(–radius-pill); flex-shrink: 0;
 }
-.badge-gold { background: #fdf3e3; color: #a0670a; border: 0.5px solid #f0d8a8; }
-.badge-silver { background: #f0f4f8; color: #4a6080; border: 0.5px solid #c8d8e8; }
-.badge-merit { background: #f0f8f0; color: #3a7050; border: 0.5px solid #aad8b8; }
-.award-name { font-size: 13.5px; color: var(–text-main); font-weight: 500; }
-.award-sub { font-size: 11.5px; color: var(–text-muted); margin-top: 1px; }
+.badge-gold  { background: #fdf3e3; color: #9a6008; border: 0.5px solid #f0d8a8; }
+.badge-silver{ background: #f0f4f8; color: #3a5068; border: 0.5px solid #c0d0e0; }
+.badge-merit { background: #f0f7f2; color: #2e6040; border: 0.5px solid #a8d8b8; }
+.award-name { font-size: 13.5px; color: var(–text-main); }
 
-/* Clubs */
-.club-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.club-card {
-background: #fff;
-border: 0.5px solid var(–sand-border);
-border-radius: var(–radius);
-padding: 14px 16px;
-transition: border-color 0.2s;
-}
-.club-card:hover { border-color: var(–purple-200); }
-.club-role { font-size: 10.5px; color: var(–text-light); margin-bottom: 3px; }
+.sub-label { font-size: 10.5px; color: var(–text-light); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+.club-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+.club-card { background: #fff; border: 0.5px solid var(–sand-border); border-radius: var(–radius); padding: 14px 18px; }
+.club-role { font-size: 10.5px; color: var(–text-light); margin-bottom: 4px; }
 .club-name { font-size: 13px; font-weight: 500; color: var(–text-main); }
 
-/* Special */
 .special-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.special-card {
-background: #fff;
-border: 0.5px solid var(–sand-border);
-border-radius: var(–radius);
-padding: 14px 16px;
-}
-.special-cat { font-size: 10px; color: var(–purple-400); letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase; }
-.special-item { font-size: 12px; color: var(–text-muted); padding: 2px 0; border-bottom: 0.5px solid var(–sand-border); }
-.special-item:last-child { border-bottom: none; }
+.special-card { background: #fff; border: 0.5px solid var(–sand-border); border-radius: var(–radius); padding: 14px 16px; }
+.special-cat { font-size: 10px; color: var(–purple-400); letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; }
+.special-item { font-size: 12px; color: var(–text-muted); padding: 5px 0; border-bottom: 0.5px solid var(–sand-border); line-height: 1.4; }
+.special-item:last-child { border-bottom: none; padding-bottom: 0; }
 
-/* IFIT */
 .ifit-card {
-background: var(–purple-50);
-border: 0.5px solid var(–purple-200);
-border-radius: var(–radius);
-padding: 20px 22px;
-display: flex;
-align-items: center;
-gap: 16px;
-text-decoration: none;
-transition: border-color 0.2s;
+background: #fff; border: 0.5px solid var(–sand-border); border-radius: var(–radius);
+padding: 20px 24px; display: flex; align-items: center; gap: 18px;
+text-decoration: none; transition: border-color 0.2s, background 0.2s;
 }
-.ifit-card:hover { border-color: var(–purple-400); }
+.ifit-card:hover { border-color: var(–purple-200); background: var(–purple-50); }
 .ifit-logo {
-width: 44px; height: 44px;
-border-radius: 10px;
-background: var(–purple-600);
+width: 42px; height: 42px; border-radius: 10px; background: var(–purple-600);
 display: flex; align-items: center; justify-content: center;
-font-size: 13px; color: #fff; font-weight: 500;
-flex-shrink: 0;
+font-size: 12px; color: #fff; font-weight: 500; letter-spacing: 0.5px; flex-shrink: 0;
 }
-.ifit-label { font-size: 10.5px; color: var(–purple-400); margin-bottom: 3px; }
-.ifit-name { font-size: 13.5px; color: var(–purple-800); font-weight: 500; }
-.ifit-sub { font-size: 11px; color: var(–purple-400); margin-top: 2px; }
-.ifit-arrow { margin-left: auto; color: var(–purple-400); font-size: 18px; }
+.ifit-label { font-size: 10px; color: var(–text-light); margin-bottom: 3px; }
+.ifit-name { font-size: 13.5px; color: var(–text-main); font-weight: 500; }
+.ifit-sub { font-size: 11px; color: var(–text-light); margin-top: 2px; }
+.ifit-arrow { margin-left: auto; color: var(–text-light); font-size: 16px; }
 
-/* Footer */
-footer {
-text-align: center;
-padding: 24px;
-font-size: 11px;
-color: var(–text-light);
-border-top: 0.5px solid var(–sand-border);
-margin-top: 8px;
-}
+footer { text-align: center; padding: 24px; font-size: 11px; color: var(–text-light); border-top: 0.5px solid var(–sand-border); }
 
-/* Fade in animation */
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(16px); }
-to   { opacity: 1; transform: translateY(0); }
-}
-.hero, .section { animation: fadeUp 0.5s ease both; }
-.section:nth-child(1) { animation-delay: 0.05s; }
-.section:nth-child(2) { animation-delay: 0.10s; }
-.section:nth-child(3) { animation-delay: 0.15s; }
-.section:nth-child(4) { animation-delay: 0.20s; }
-.section:nth-child(5) { animation-delay: 0.25s; }
-.section:nth-child(6) { animation-delay: 0.30s; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.hero { animation: fadeUp 0.4s ease both; }
+.section:nth-child(1) { animation: fadeUp 0.4s 0.05s ease both; }
+.section:nth-child(2) { animation: fadeUp 0.4s 0.10s ease both; }
+.section:nth-child(3) { animation: fadeUp 0.4s 0.15s ease both; }
+.section:nth-child(4) { animation: fadeUp 0.4s 0.20s ease both; }
+.section:nth-child(5) { animation: fadeUp 0.4s 0.25s ease both; }
 
 @media (max-width: 600px) {
-.hero { flex-direction: column; align-items: center; text-align: center; padding: 32px 20px 24px; }
+.hero { flex-direction: column; align-items: center; text-align: center; padding: 36px 20px 28px; gap: 20px; }
 .contact-row { justify-content: center; }
-.container { padding: 28px 20px; }
+.container { padding: 28px 20px 40px; }
 .club-grid, .special-grid { grid-template-columns: 1fr; }
-nav a { padding: 12px 10px; font-size: 11px; }
+nav a { padding: 12px 10px; font-size: 11px; letter-spacing: 0.2px; }
 }
 </style>
 
 </head>
 <body>
 
-<nav id="navbar">
+<nav>
   <a href="#about" class="active">About</a>
   <a href="#education">Education</a>
   <a href="#awards">Awards</a>
@@ -321,60 +193,43 @@ nav a { padding: 12px 10px; font-size: 11px; }
   <a href="#lab">IFIT Lab</a>
 </nav>
 
-<!-- HERO -->
-
-<div class="hero">
-  <div class="avatar">
-    <!-- 把下面這行的註解拿掉，並替換成你的照片路徑，例如 photo.jpg -->
-    <!-- <img src="photo.jpg" alt="孫維希"> -->
-    孫
-  </div>
-  <div class="hero-info">
-    <div class="name-zh">孫 維 希</div>
-    <div class="name-en">SUN, WEI-HSI</div>
-    <div class="dept-tag">國立臺北大學 · 會計學系</div>
-    <div class="contact-row">
-      <div class="chip">
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-        wishsun945@gmail.com
-      </div>
-      <div class="chip">
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-        0902-101-808
-      </div>
-      <div class="chip">
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
-        2005 / 10 / 19
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="avatar">
+      <!-- 上傳 photo.jpg 後，刪除下一行並取消這行的註解：<img src="photo.jpg" alt="孫維希"> -->
+      孫
+    </div>
+    <div>
+      <div class="name-zh">孫 維 希</div>
+      <div class="name-en">SUN, WEI-HSI</div>
+      <div class="dept-tag">國立臺北大學 · 會計學系</div>
+      <div class="contact-row">
+        <div class="chip">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          wishsun945@gmail.com
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          0902-101-808
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+          2005 / 10 / 19
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- CONTENT -->
-
 <div class="container">
-
-  <!-- About -->
 
   <div class="section" id="about">
     <div class="sec-title">
       <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-      About Me
+      About
     </div>
-    <p class="about-text">
-      Hi! I'm Wei-Hsi, a first-year student at the Department of Accounting, National Taipei University (NTPU). I'm passionate about exploring the intersection of accounting, financial technology, and sustainability. As a member of IFIT Lab, I'm interested in how AI and ESG data analytics can shape a better and more responsible financial future.
-    </p>
-    <div class="tag-row">
-      <span class="tag">ESG Analytics</span>
-      <span class="tag">FinTech</span>
-      <span class="tag">AI</span>
-      <span class="tag">Accounting</span>
-      <span class="tag">SDGs</span>
-      <span class="tag">Sustainability</span>
-    </div>
+    <p class="about-text">I am Wei-Hsi Sun, a first-year student at the Department of Accounting, National Taipei University. My academic interests lie at the intersection of accounting, financial technology, and sustainability. As a member of IFIT Lab, I focus on how artificial intelligence and ESG data analytics can contribute to more responsible and transparent financial systems.</p>
   </div>
-
-  <!-- Education -->
 
   <div class="section" id="education">
     <div class="sec-title">
@@ -384,128 +239,71 @@ nav a { padding: 12px 10px; font-size: 11px; }
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-dot current"></div>
-        <div>
-          <div class="tl-year">2024 — 現在</div>
-          <div class="tl-school">國立臺北大學</div>
-          <div class="tl-dept">會計學系</div>
-        </div>
+        <div class="tl-year">2024 — present</div>
+        <div><div class="tl-school">National Taipei University</div><div class="tl-dept">Department of Accounting</div></div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div>
-          <div class="tl-year">2021 — 2024</div>
-          <div class="tl-school">明道高級中學 高中部</div>
-          <div class="tl-dept">人文實驗班</div>
-        </div>
+        <div class="tl-year">2021 — 2024</div>
+        <div><div class="tl-school">明道高級中學 高中部</div><div class="tl-dept">人文實驗班</div></div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div>
-          <div class="tl-year">2018 — 2021</div>
-          <div class="tl-school">明道高級中學 國中部</div>
-          <div class="tl-dept">數語資優班</div>
-        </div>
+        <div class="tl-year">2018 — 2021</div>
+        <div><div class="tl-school">明道高級中學 國中部</div><div class="tl-dept">數語資優班</div></div>
       </div>
     </div>
   </div>
-
-  <!-- Awards -->
 
   <div class="section" id="awards">
     <div class="sec-title">
       <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/></svg>
-      Awards & Competitions
+      Awards
     </div>
     <div class="award-list">
-      <div class="award-item">
-        <div class="award-badge badge-gold">最佳提案獎</div>
-        <div>
-          <div class="award-name">SDGs 永續發展目標提案競賽</div>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-badge badge-gold">圓夢獎金 ／ 最佳團隊獎</div>
-        <div>
-          <div class="award-name">第九屆 新世紀青少年高峰論壇</div>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-badge badge-gold">金質獎</div>
-        <div>
-          <div class="award-name">學生校園刊物競賽</div>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-badge badge-silver">甲等</div>
-        <div>
-          <div class="award-name">全國高中生閱讀心得比賽</div>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-badge badge-merit">佳作</div>
-        <div>
-          <div class="award-name">專題研究競賽</div>
-        </div>
-      </div>
+      <div class="award-item"><div class="award-badge badge-gold">最佳提案獎</div><div class="award-name">SDGs 永續發展目標提案競賽</div></div>
+      <div class="award-item"><div class="award-badge badge-gold">圓夢獎金 · 最佳團隊獎</div><div class="award-name">第九屆 新世紀青少年高峰論壇</div></div>
+      <div class="award-item"><div class="award-badge badge-gold">金質獎</div><div class="award-name">學生校園刊物競賽</div></div>
+      <div class="award-item"><div class="award-badge badge-silver">甲等</div><div class="award-name">全國高中生閱讀心得比賽</div></div>
+      <div class="award-item"><div class="award-badge badge-merit">佳作</div><div class="award-name">專題研究競賽</div></div>
     </div>
   </div>
-
-  <!-- Activities -->
 
   <div class="section" id="activities">
     <div class="sec-title">
       <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
-      Clubs & Activities
+      Activities
     </div>
-
-```
-<p style="font-size:11px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Leadership</p>
-<div class="club-grid" style="margin-bottom:20px">
-  <div class="club-card">
-    <div class="club-role">總召集人</div>
-    <div class="club-name">明道財經 SIG</div>
+    <div class="sub-label" style="margin-bottom:12px">Leadership</div>
+    <div class="club-grid">
+      <div class="club-card"><div class="club-role">總召集人</div><div class="club-name">明道財經 SIG</div></div>
+      <div class="club-card"><div class="club-role">會長</div><div class="club-name">國立臺北大學中友會</div></div>
+      <div class="club-card"><div class="club-role">副召集人</div><div class="club-name">第十屆 新世紀青少年高峰論壇</div></div>
+      <div class="club-card"><div class="club-role">團員</div><div class="club-name">明道藍韻管樂團</div></div>
+    </div>
+    <div class="sub-label" style="margin-bottom:12px">Experience</div>
+    <div class="special-grid">
+      <div class="special-card">
+        <div class="special-cat">活動主持</div>
+        <div class="special-item">第10屆 新世紀青少年高峰論壇</div>
+        <div class="special-item">明道文學獎頒獎典禮</div>
+        <div class="special-item">2024 藍色管風情</div>
+      </div>
+      <div class="special-card">
+        <div class="special-cat">音樂表演</div>
+        <div class="special-item">2019 草地音樂會</div>
+        <div class="special-item">2020 藍色管風情</div>
+        <div class="special-item">2022 藍色管風情</div>
+        <div class="special-item">2023 草地音樂會</div>
+        <div class="special-item">2023 藍色管風情</div>
+      </div>
+      <div class="special-card">
+        <div class="special-cat">其他</div>
+        <div class="special-item">APYLC 亞太青年領袖峰會 分享者</div>
+        <div class="special-item">烏日生活圈 學生團隊</div>
+      </div>
+    </div>
   </div>
-  <div class="club-card">
-    <div class="club-role">會長</div>
-    <div class="club-name">國立臺北大學中友會</div>
-  </div>
-  <div class="club-card">
-    <div class="club-role">副召集人</div>
-    <div class="club-name">第十屆 新世紀青少年高峰論壇</div>
-  </div>
-  <div class="club-card">
-    <div class="club-role">團員</div>
-    <div class="club-name">明道藍韻管樂團</div>
-  </div>
-</div>
-
-<p style="font-size:11px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Special Experience</p>
-<div class="special-grid">
-  <div class="special-card">
-    <div class="special-cat">活動主持</div>
-    <div class="special-item">第10屆 新世紀青少年高峰論壇</div>
-    <div class="special-item">明道文學獎頒獎典禮</div>
-    <div class="special-item">2024 藍色管風情</div>
-  </div>
-  <div class="special-card">
-    <div class="special-cat">音樂表演</div>
-    <div class="special-item">2019 草地音樂會</div>
-    <div class="special-item">2020 藍色管風情</div>
-    <div class="special-item">2022 藍色管風情</div>
-    <div class="special-item">2023 草地音樂會</div>
-    <div class="special-item">2023 藍色管風情</div>
-  </div>
-  <div class="special-card">
-    <div class="special-cat">其他</div>
-    <div class="special-item">APYLC 亞太青年領袖峰會 分享者</div>
-    <div class="special-item">烏日生活圈 學生團隊</div>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- IFIT Lab -->
 
   <div class="section" id="lab">
     <div class="sec-title">
@@ -517,7 +315,7 @@ nav a { padding: 12px 10px; font-size: 11px; }
       <div>
         <div class="ifit-label">Member of</div>
         <div class="ifit-name">Intelligent Financial Innovation Technology Lab</div>
-        <div class="ifit-sub">National Taipei University (NTPU) · aifitesg.org</div>
+        <div class="ifit-sub">National Taipei University · aifitesg.org</div>
       </div>
       <div class="ifit-arrow">→</div>
     </a>
@@ -525,24 +323,20 @@ nav a { padding: 12px 10px; font-size: 11px; }
 
 </div>
 
-<footer>
-  © 2025 孫維希 Sun, Wei-Hsi &nbsp;·&nbsp; National Taipei University
-</footer>
+<footer>© 2025 孫維希 Sun, Wei-Hsi · National Taipei University</footer>
 
 <script>
   const sections = document.querySelectorAll('.section[id]');
   const navLinks = document.querySelectorAll('nav a');
-
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
         navLinks.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector('nav a[href="#' + entry.target.id + '"]');
-        if (active) active.classList.add('active');
+        const link = document.querySelector('nav a[href="#' + e.target.id + '"]');
+        if (link) link.classList.add('active');
       }
     });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-
+  }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(s => observer.observe(s));
 </script>
 
