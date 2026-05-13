@@ -10,28 +10,12 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root {
--–c50:  #fff5f2;
-–-c100: #ffddd4;
-–-c200: #ffbba8;
-–-c400: #f4845f;
--–c600: #c95c38;
-–-bg:   #fff9f7;
--–border: #f0e8e4;
--–text: #1e1a18;
--–muted: #5a4f4a;
-–-light: #b09890;
--–r: 14px;
--–pill: 100px;
--–w: 740px;
-}
-
 html { scroll-behavior: smooth; }
 
 body {
 font-family: ‘DM Sans’, sans-serif;
-background: var(–-bg);
-color: var(–-text);
+background: #fff9f7;
+color: #1e1a18;
 line-height: 1.6;
 background-image:
 radial-gradient(ellipse 80% 40% at 10% 0%, #ffe4da55 0%, transparent 60%),
@@ -43,25 +27,25 @@ nav {
 position: sticky; top: 0; z-index: 100;
 background: rgba(255,249,247,0.93);
 backdrop-filter: blur(12px);
-border-bottom: 0.5px solid var(–-border);
+border-bottom: 0.5px solid #f0e8e4;
 display: flex; justify-content: center; padding: 0 16px;
 }
 nav a {
 display: block; padding: 13px 14px;
-font-size: 12px; color: var(–-light);
+font-size: 12px; color: #b09890;
 text-decoration: none; letter-spacing: 0.8px;
 border-bottom: 2px solid transparent;
 transition: color .2s, border-color .2s; white-space: nowrap;
 }
-nav a:hover { color: var(-–c600); }
-nav a.active { color: var(–-c600); border-bottom-color: var(–c600); }
+nav a:hover { color: #c95c38; }
+nav a.active { color: #c95c38; border-bottom-color: #c95c38; }
 
 .hero-wrap {
 background: linear-gradient(135deg, #fff5f0 0%, #fff0eb 50%, #ffeae2 100%);
-border-bottom: 0.5px solid var(-–border);
+border-bottom: 0.5px solid #f0e8e4;
 }
 .hero {
-max-width: var(–-w); margin: 0 auto;
+max-width: 740px; margin: 0 auto;
 padding: 52px 24px 44px;
 display: flex; gap: 36px; align-items: center;
 }
@@ -70,9 +54,9 @@ display: flex; gap: 36px; align-items: center;
 width: 96px; height: 96px; border-radius: 50%; flex-shrink: 0;
 background: linear-gradient(135deg, #ffddd4, #ffbba8);
 border: 3px solid #fff;
-box-shadow: 0 0 0 2px var(–-c200);
+box-shadow: 0 0 0 2px #ffbba8;
 display: flex; align-items: center; justify-content: center;
-font-family: ‘Noto Serif TC’, serif; font-size: 30px; color: var(–-c600);
+font-family: ‘Noto Serif TC’, serif; font-size: 30px; color: #c95c38;
 overflow: hidden;
 }
 .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
@@ -80,117 +64,116 @@ overflow: hidden;
 .name-zh {
 font-family: ‘Noto Serif TC’, serif;
 font-size: 27px; font-weight: 500; letter-spacing: 5px;
-color: var(–text); margin-bottom: 3px;
+color: #1e1a18; margin-bottom: 3px;
 }
-.name-en { font-size: 11px; letter-spacing: 4px; color: var(–-light); margin-bottom: 13px; }
+.name-en { font-size: 11px; letter-spacing: 4px; color: #b09890; margin-bottom: 13px; }
 .dept-tag {
 display: inline-block; font-size: 11.5px;
-background: rgba(255,255,255,0.8); color: var(-–c600);
-border: 0.5px solid var(–-c200);
-padding: 4px 14px; border-radius: var(–pill); margin-bottom: 16px;
+background: rgba(255,255,255,0.8); color: #c95c38;
+border: 0.5px solid #ffbba8;
+padding: 4px 14px; border-radius: 100px; margin-bottom: 16px;
 }
 .chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .chip {
 display: flex; align-items: center; gap: 5px;
-font-size: 11.5px; color: var(–-muted);
+font-size: 11.5px; color: #5a4f4a;
 background: rgba(255,255,255,0.75);
-border: 0.5px solid var(-–border);
-padding: 4px 12px; border-radius: var(–-pill);
+border: 0.5px solid #f0e8e4;
+padding: 4px 12px; border-radius: 100px;
 }
-.chip svg { width: 12px; height: 12px; stroke: var(–-light); fill: none; flex-shrink: 0; }
+.chip svg { width: 12px; height: 12px; stroke: #b09890; fill: none; flex-shrink: 0; }
 
-.container { max-width: var(–-w); margin: 0 auto; padding: 44px 24px 60px; }
+.container { max-width: 740px; margin: 0 auto; padding: 44px 24px 60px; }
 .section { margin-bottom: 44px; }
 
 .sec-title {
 display: flex; align-items: center; gap: 8px;
 font-size: 10px; font-weight: 500; letter-spacing: 2.5px;
-color: var(–c400); text-transform: uppercase; margin-bottom: 20px;
+color: #f4845f; text-transform: uppercase; margin-bottom: 20px;
 }
-.sec-title::after { content: ‘’; flex: 1; height: 0.5px; background: var(–-border); }
-.sec-title svg { width: 13px; height: 13px; stroke: var(–-c400); fill: none; flex-shrink: 0; }
+.sec-title::after { content: ‘’; flex: 1; height: 0.5px; background: #f0e8e4; }
+.sec-title svg { width: 13px; height: 13px; stroke: #f4845f; fill: none; flex-shrink: 0; }
 
 .card {
 background: rgba(255,255,255,0.85);
-border: 0.5px solid var(-–border);
-border-radius: var(–r);
+border: 0.5px solid #f0e8e4;
+border-radius: 14px;
 backdrop-filter: blur(4px);
 }
 
-.about-text { font-size: 14.5px; color: var(-–muted); line-height: 1.9; }
+.about-text { font-size: 14.5px; color: #5a4f4a; line-height: 1.9; }
 
 .timeline { display: flex; flex-direction: column; }
 .tl-item { display: flex; gap: 16px; padding-bottom: 20px; position: relative; align-items: flex-start; }
 .tl-item:not(:last-child)::before {
 content: ‘’; position: absolute; left: 4px; top: 12px; bottom: 0;
-width: 0.5px; background: var(-–border);
+width: 0.5px; background: #f0e8e4;
 }
-.tl-dot { width: 9px; height: 9px; border-radius: 50%; background: var(–-c200); flex-shrink: 0; margin-top: 4px; }
-.tl-dot.now { background: var(–c400); box-shadow: 0 0 0 3px var(–c50); }
-.tl-year { font-size: 11px; color: var(–light); min-width: 108px; white-space: nowrap; padding-top: 2px; }
-.tl-school { font-size: 14px; font-weight: 500; color: var(–-text); }
-.tl-dept { font-size: 12px; color: var(–-light); margin-top: 2px; }
+.tl-dot { width: 9px; height: 9px; border-radius: 50%; background: #ffbba8; flex-shrink: 0; margin-top: 4px; }
+.tl-dot.now { background: #f4845f; box-shadow: 0 0 0 3px #fff5f2; }
+.tl-year { font-size: 11px; color: #b09890; min-width: 108px; white-space: nowrap; padding-top: 2px; }
+.tl-school { font-size: 14px; font-weight: 500; color: #1e1a18; }
+.tl-dept { font-size: 12px; color: #b09890; margin-top: 2px; }
 
 .project-card { padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; }
 .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .project-badge {
-font-size: 10px; padding: 3px 10px; border-radius: var(–-pill);
-background: var(–c50); color: var(–c600); border: 0.5px solid var(–-c200);
+font-size: 10px; padding: 3px 10px; border-radius: 100px;
+background: #fff5f2; color: #c95c38; border: 0.5px solid #ffbba8;
 white-space: nowrap; flex-shrink: 0;
 }
-.project-title { font-size: 15px; font-weight: 500; color: var(-–text); margin-bottom: 2px; }
-.project-sub { font-size: 12px; color: var(-–c400); margin-bottom: 8px; }
-.project-desc { font-size: 13px; color: var(-–muted); line-height: 1.75; }
+.project-title { font-size: 15px; font-weight: 500; color: #1e1a18; margin-bottom: 2px; }
+.project-sub { font-size: 12px; color: #f4845f; margin-bottom: 8px; }
+.project-desc { font-size: 13px; color: #5a4f4a; line-height: 1.75; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .project-tag {
-font-size: 10.5px; padding: 3px 10px; border-radius: var(-–pill);
-background: var(–bg); color: var(-–muted); border: 0.5px solid var(-–border);
+font-size: 10.5px; padding: 3px 10px; border-radius: 100px;
+background: #fff9f7; color: #5a4f4a; border: 0.5px solid #f0e8e4;
 }
 
 .award-list { display: flex; flex-direction: column; gap: 8px; }
 .award-item { display: flex; align-items: center; gap: 12px; padding: 13px 16px; }
-.badge { font-size: 10px; white-space: nowrap; padding: 3px 10px; border-radius: var(-–pill); flex-shrink: 0; }
+.badge { font-size: 10px; white-space: nowrap; padding: 3px 10px; border-radius: 100px; flex-shrink: 0; }
 .b-gold   { background: #fff4e0; color: #96620a; border: 0.5px solid #f0d49a; }
 .b-silver { background: #f0f4f8; color: #3a5068; border: 0.5px solid #bcd0e4; }
 .b-merit  { background: #f0f7f2; color: #2e6040; border: 0.5px solid #a8d8b8; }
-.b-coral  { background: var(–-c50); color: var(-–c600); border: 0.5px solid var(–-c200); }
-.award-name { font-size: 13px; color: var(–-text); line-height: 1.4; }
-.award-org { font-size: 11px; color: var(-–light); margin-top: 1px; }
+.b-coral  { background: #fff5f2; color: #c95c38; border: 0.5px solid #ffbba8; }
+.award-name { font-size: 13px; color: #1e1a18; line-height: 1.4; }
 
-.sub-label { font-size: 10px; color: var(–-light); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 11px; }
+.sub-label { font-size: 10px; color: #b09890; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 11px; }
 .club-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 22px; }
 .club-card { padding: 14px 16px; }
-.club-role { font-size: 10.5px; color: var(–-c400); margin-bottom: 3px; }
-.club-name { font-size: 13px; font-weight: 500; color: var(-–text); }
-.club-sub { font-size: 11px; color: var(–-light); margin-top: 2px; }
+.club-role { font-size: 10.5px; color: #f4845f; margin-bottom: 3px; }
+.club-name { font-size: 13px; font-weight: 500; color: #1e1a18; }
+.club-sub { font-size: 11px; color: #b09890; margin-top: 2px; }
 
 .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
 .exp-card { padding: 13px 15px; }
-.exp-cat { font-size: 10px; color: var(-–c400); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 9px; }
-.exp-item { font-size: 12px; color: var(–-muted); padding: 5px 0; border-bottom: 0.5px solid var(-–border); line-height: 1.4; }
+.exp-cat { font-size: 10px; color: #f4845f; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 9px; }
+.exp-item { font-size: 12px; color: #5a4f4a; padding: 5px 0; border-bottom: 0.5px solid #f0e8e4; line-height: 1.4; }
 .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
-.exp-sub { font-size: 10.5px; color: var(-–light); }
+.exp-sub { font-size: 10.5px; color: #b09890; }
 
 .ifit-card {
 display: flex; align-items: center; gap: 16px; padding: 20px 22px;
 text-decoration: none; transition: border-color .2s, background .2s;
 }
-.ifit-card:hover { background: rgba(255,255,255,1); border-color: var(–-c200); }
+.ifit-card:hover { background: rgba(255,255,255,1); border-color: #ffbba8; }
 .ifit-logo {
 width: 40px; height: 40px; border-radius: 10px;
-background: linear-gradient(135deg, var(–c400), var(–-c600));
+background: linear-gradient(135deg, #f4845f, #c95c38);
 display: flex; align-items: center; justify-content: center;
 font-size: 11px; color: #fff; font-weight: 500; flex-shrink: 0;
 }
-.ifit-label { font-size: 10px; color: var(–-light); margin-bottom: 3px; }
-.ifit-name { font-size: 13px; font-weight: 500; color: var(–-text); }
-.ifit-sub { font-size: 11px; color: var(–-light); margin-top: 2px; }
-.ifit-arrow { margin-left: auto; color: var(–-c400); font-size: 18px; }
+.ifit-label { font-size: 10px; color: #b09890; margin-bottom: 3px; }
+.ifit-name { font-size: 13px; font-weight: 500; color: #1e1a18; }
+.ifit-sub { font-size: 11px; color: #b09890; margin-top: 2px; }
+.ifit-arrow { margin-left: auto; color: #f4845f; font-size: 18px; }
 
 footer {
 text-align: center; padding: 28px 24px;
-font-size: 11px; color: var(–-light);
-border-top: 0.5px solid var(–-border);
+font-size: 11px; color: #b09890;
+border-top: 0.5px solid #f0e8e4;
 background: linear-gradient(to top, #fff5f2, transparent);
 }
 
@@ -227,7 +210,7 @@ nav a { padding: 12px 8px; font-size: 11px; letter-spacing: 0.3px; }
 <div class="hero-wrap">
   <div class="hero">
     <div class="avatar">
-      <!-- Replace 孫 with: <img src="photo.jpg" alt="Wei-Hsi Sun"> after uploading your photo -->
+      <!-- Replace with: <img src="photo.jpg" alt="Wei-Hsi Sun"> after uploading photo -->
       孫
     </div>
     <div>
@@ -271,26 +254,17 @@ nav a { padding: 12px 8px; font-size: 11px; letter-spacing: 0.3px; }
       <div class="tl-item">
         <div class="tl-dot now"></div>
         <div class="tl-year">2024 — present</div>
-        <div>
-          <div class="tl-school">National Taipei University</div>
-          <div class="tl-dept">Department of Accounting</div>
-        </div>
+        <div><div class="tl-school">National Taipei University</div><div class="tl-dept">Department of Accounting</div></div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2021 — 2024</div>
-        <div>
-          <div class="tl-school">Mingdao Senior High School</div>
-          <div class="tl-dept">Humanities Experimental Class</div>
-        </div>
+        <div><div class="tl-school">Mingdao Senior High School</div><div class="tl-dept">Humanities Experimental Class</div></div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2018 — 2021</div>
-        <div>
-          <div class="tl-school">Mingdao Junior High School</div>
-          <div class="tl-dept">Mathematics & Language Gifted Class</div>
-        </div>
+        <div><div class="tl-school">Mingdao Junior High School</div><div class="tl-dept">Mathematics &amp; Language Gifted Class</div></div>
       </div>
     </div>
   </div>
@@ -323,36 +297,11 @@ nav a { padding: 12px 8px; font-size: 11px; letter-spacing: 0.3px; }
       Awards
     </div>
     <div class="award-list">
-      <div class="award-item card">
-        <div class="badge b-coral">Best Proposal Award</div>
-        <div>
-          <div class="award-name">SDGs Sustainable Development Goals Proposal Competition</div>
-        </div>
-      </div>
-      <div class="award-item card">
-        <div class="badge b-gold">Dream Fund · Best Team Award</div>
-        <div>
-          <div class="award-name">Tuokai New Century Youth Summit Forum — 9th Edition</div>
-        </div>
-      </div>
-      <div class="award-item card">
-        <div class="badge b-gold">Gold Award</div>
-        <div>
-          <div class="award-name">Student Campus Publication Competition</div>
-        </div>
-      </div>
-      <div class="award-item card">
-        <div class="badge b-silver">First Place</div>
-        <div>
-          <div class="award-name">National High School Reading Reflection Competition</div>
-        </div>
-      </div>
-      <div class="award-item card">
-        <div class="badge b-merit">Honorable Mention</div>
-        <div>
-          <div class="award-name">Special Topic Research Competition</div>
-        </div>
-      </div>
+      <div class="award-item card"><div class="badge b-coral">Best Proposal Award</div><div><div class="award-name">SDGs Sustainable Development Goals Proposal Competition</div></div></div>
+      <div class="award-item card"><div class="badge b-gold">Dream Fund · Best Team Award</div><div><div class="award-name">Tuokai New Century Youth Summit Forum — 9th Edition</div></div></div>
+      <div class="award-item card"><div class="badge b-gold">Gold Award</div><div><div class="award-name">Student Campus Publication Competition</div></div></div>
+      <div class="award-item card"><div class="badge b-silver">First Place</div><div><div class="award-name">National High School Reading Reflection Competition</div></div></div>
+      <div class="award-item card"><div class="badge b-merit">Honorable Mention</div><div><div class="award-name">Special Topic Research Competition</div></div></div>
     </div>
   </div>
 
@@ -363,52 +312,23 @@ nav a { padding: 12px 8px; font-size: 11px; letter-spacing: 0.3px; }
     </div>
     <div class="sub-label">Leadership</div>
     <div class="club-grid">
-      <div class="club-card card">
-        <div class="club-role">Convener</div>
-        <div class="club-name">Mingdao Finance Special Interest Group (SIG)</div>
-        <div class="club-sub">Mingdao High School</div>
-      </div>
-      <div class="club-card card">
-        <div class="club-role">President</div>
-        <div class="club-name">NTPU Chung-Yo Club</div>
-        <div class="club-sub">National Taipei University</div>
-      </div>
-      <div class="club-card card">
-        <div class="club-role">Deputy Convener</div>
-        <div class="club-name">Tuokai New Century Youth Summit Forum — 10th Edition</div>
-        <div class="club-sub">Mingdao High School · Tuokai Educational Foundation</div>
-      </div>
-      <div class="club-card card">
-        <div class="club-role">Member</div>
-        <div class="club-name">Mingdao Wind Band</div>
-        <div class="club-sub">Mingdao High School</div>
-      </div>
+      <div class="club-card card"><div class="club-role">Convener</div><div class="club-name">Mingdao Finance Special Interest Group (SIG)</div><div class="club-sub">Mingdao High School</div></div>
+      <div class="club-card card"><div class="club-role">President</div><div class="club-name">NTPU Chung-Yo Club</div><div class="club-sub">National Taipei University</div></div>
+      <div class="club-card card"><div class="club-role">Deputy Convener</div><div class="club-name">Tuokai New Century Youth Summit Forum — 10th Edition</div><div class="club-sub">Mingdao High School · Tuokai Educational Foundation</div></div>
+      <div class="club-card card"><div class="club-role">Member</div><div class="club-name">Mingdao Wind Band</div><div class="club-sub">Mingdao High School</div></div>
     </div>
     <div class="sub-label">Experience</div>
     <div class="exp-grid">
       <div class="exp-card card">
         <div class="exp-cat">MC / Event Hosting</div>
-        <div class="exp-item">
-          Tuokai New Century Youth Summit Forum — 10th Edition
-          <div class="exp-sub">Mingdao High School · Tuokai Educational Foundation</div>
-        </div>
-        <div class="exp-item">
-          Mingdao Literary Award Ceremony
-          <div class="exp-sub">Mingdao High School</div>
-        </div>
-        <div class="exp-item">
-          2024 Blue Wind Ensemble Concert
-          <div class="exp-sub">Mingdao Wind Band</div>
-        </div>
+        <div class="exp-item">Tuokai New Century Youth Summit Forum — 10th Edition<div class="exp-sub">Mingdao High School · Tuokai Educational Foundation</div></div>
+        <div class="exp-item">Mingdao Literary Award Ceremony<div class="exp-sub">Mingdao High School</div></div>
+        <div class="exp-item">2024 Blue Wind Ensemble Concert<div class="exp-sub">Mingdao Wind Band</div></div>
       </div>
       <div class="exp-card card">
         <div class="exp-cat">Other</div>
-        <div class="exp-item">
-          Asia-Pacific Young Leaders Convention (APYLC) — Speaker
-        </div>
-        <div class="exp-item">
-          Wuri Living Circle — Community Student Team
-        </div>
+        <div class="exp-item">Asia-Pacific Young Leaders Convention (APYLC) — Speaker</div>
+        <div class="exp-item">Wuri Living Circle — Community Student Team</div>
       </div>
     </div>
   </div>
@@ -425,23 +345,23 @@ nav a { padding: 12px 8px; font-size: 11px; letter-spacing: 0.3px; }
         <div class="ifit-name">Intelligent Financial Innovation Technology Lab</div>
         <div class="ifit-sub">National Taipei University · aifitesg.org</div>
       </div>
-      <div class="ifit-arrow">→</div>
+      <div class="ifit-arrow">&#8594;</div>
     </a>
   </div>
 
 </div>
 
-<footer>© 2025 Wei-Hsi Sun · National Taipei University</footer>
+<footer>&#169; 2025 Wei-Hsi Sun · National Taipei University</footer>
 
 <script>
-  const secs = document.querySelectorAll('.section[id]');
-  const links = document.querySelectorAll('nav a');
-  secs.forEach(s => {
-    new IntersectionObserver(entries => {
-      entries.forEach(e => {
+  var secs = document.querySelectorAll('.section[id]');
+  var links = document.querySelectorAll('nav a');
+  secs.forEach(function(s) {
+    new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
         if (e.isIntersecting) {
-          links.forEach(l => l.classList.remove('active'));
-          const a = document.querySelector('nav a[href="#'+e.target.id+'"]');
+          links.forEach(function(l) { l.classList.remove('active'); });
+          var a = document.querySelector('nav a[href="#' + e.target.id + '"]');
           if (a) a.classList.add('active');
         }
       });
